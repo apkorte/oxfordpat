@@ -519,6 +519,53 @@
       color: #fff;
     }
 
+    /* ── FAQ ────────────────────────────────────────────────── */
+    .faq {
+      background: var(--bg-grey);
+    }
+
+    .faq-list {
+      margin-top: 2rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .faq-item {
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--rule);
+      max-width: 72ch;
+    }
+
+    .faq-q {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 0.65rem;
+    }
+
+    .faq-a {
+      font-size: 0.95rem;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+
+    /* ── Footer links ────────────────────────────────────────── */
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.78rem;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: rgba(255,255,255,0.8);
+    }
+
     /* ── Utility ───────────────────────────────────────────── */
     .visually-hidden {
       position: absolute;
@@ -531,6 +578,14 @@
       white-space: nowrap;
       border: 0;
     }
+    @media screen and (orientation: portrait) and (max-width: 768px) {
+      html { font-size: 18px; }
+    }
+
+    @media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px) {
+      body { font-size: 20px; }
+      p, li, dd, dt { font-size: 20px !important; }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -540,11 +595,29 @@
       "@type": "Person",
       "name": "Dr Anthony Korte",
       "jobTitle": "Physics and Mathematics Tutor",
-      "description": "Theoretical physicist and admissions test preparation specialist. First Class degree in Physics from the University of Oxford, MSc with Distinction, PhD in Theoretical Physics from Imperial College London.",
+      "description": "Theoretical physicist and admissions test preparation specialist. First Class degree in Physics from the University of Oxford, MSc with Distinction in Mathematical Modelling from University College London, PhD in Theoretical Physics from Imperial College London.",
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "First Class degree in Physics, University of Oxford"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "MSc with Distinction in Mathematical Modelling, University College London"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "PhD in Theoretical Physics, Imperial College London"
+        }
+      ],
       "alumniOf": [
         {
           "@type": "CollegeOrUniversity",
           "name": "University of Oxford"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University College London"
         },
         {
           "@type": "CollegeOrUniversity",
@@ -582,9 +655,63 @@
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
       "name": "Physics and Maths Courses",
-      "url": "https://physicsandmathscourses.com",
+      "url": "https://oxfordpat.co.uk/",
       "sameAs": "https://physicsandmathscourses.com",
       "description": "Online physics and mathematics tuition for university admissions tests, including ESAT preparation for Cambridge applicants."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the ESAT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Engineering and Science Admissions Test (ESAT) is a written admissions test required for applications to Physics, Physics & Philosophy, and all Engineering courses at Cambridge University. It consists of multiple-choice questions across three modules: Mathematics 1, Mathematics 2, and Physics. The test is taken in October of Year 13."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Cambridge courses require the ESAT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The ESAT is required for Cambridge University applications to Physics, Physics & Philosophy, and all Engineering courses (including Chemical Engineering). Applicants to these courses must sit Mathematics 1, Mathematics 2, and Physics modules."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the ESAT preparation course cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The course covers all three ESAT modules in full: Mathematics 1 (algebra, functions, calculus, sequences and series), Mathematics 2 (further calculus, differential equations, complex numbers, vectors), and Physics (mechanics, waves, electricity, fields, thermal physics, modern physics). The focus is on problem-solving technique, exam strategy, and accuracy under timed conditions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does online ESAT tuition work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sessions are delivered online via Zoom in small groups. Dr Korte works through problems in real time using screen-sharing, with students able to ask questions and discuss approaches throughout. This format combines the rigour of structured classroom teaching with the convenience of online delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes Dr Korte qualified to teach ESAT preparation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dr Korte holds a First Class degree in Physics from the University of Oxford, an MSc with Distinction in Mathematical Modelling from University College London, and a PhD in Theoretical Physics from Imperial College London. He has published peer-reviewed research and has extensive experience preparing students for competitive admissions tests including the PAT, MAT, and ESAT."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this course suitable for Year 12 students as well as Year 13?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. While the ESAT is sat in October of Year 13, starting preparation in Year 12 allows more time to develop the depth of understanding the test rewards. Year 12 students who begin early are often better placed to consolidate their A-level content alongside ESAT-specific technique. Dr Korte can advise on the most suitable timing for individual students."
+          }
+        }
+      ]
     }
   ]
   </script>
@@ -768,6 +895,47 @@
       </div>
     </section>
 
+    <!-- ── FAQ ──────────────────────────────────────────── -->
+    <section class="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <span class="section-label">Common Questions</span>
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
+        <dl class="faq-list">
+
+          <div class="faq-item">
+            <dt class="faq-q">What is the ESAT?</dt>
+            <dd class="faq-a">The Engineering and Science Admissions Test (ESAT) is a written admissions test required for applications to Physics, Physics &amp; Philosophy, and all Engineering courses at Cambridge University. It consists of multiple-choice questions across three modules: Mathematics 1, Mathematics 2, and Physics. The test is taken in October of Year 13.</dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-q">Which Cambridge courses require the ESAT?</dt>
+            <dd class="faq-a">The ESAT is required for Cambridge University applications to Physics, Physics &amp; Philosophy, and all Engineering courses (including Chemical Engineering). Applicants to these courses must sit Mathematics 1, Mathematics 2, and Physics modules.</dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-q">What does the ESAT preparation course cover?</dt>
+            <dd class="faq-a">The course covers all three ESAT modules in full: Mathematics 1 (algebra, functions, calculus, sequences and series), Mathematics 2 (further calculus, differential equations, complex numbers, vectors), and Physics (mechanics, waves, electricity, fields, thermal physics, modern physics). The focus is on problem-solving technique, exam strategy, and accuracy under timed conditions.</dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-q">How does online ESAT tuition work?</dt>
+            <dd class="faq-a">Sessions are delivered online via Zoom in small groups. Dr Korte works through problems in real time using screen-sharing, with students able to ask questions and discuss approaches throughout. This format combines the rigour of structured classroom teaching with the convenience of online delivery.</dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-q">What makes Dr Korte qualified to teach ESAT preparation?</dt>
+            <dd class="faq-a">Dr Korte holds a First Class degree in Physics from the University of Oxford, an MSc with Distinction in Mathematical Modelling from University College London, and a PhD in Theoretical Physics from Imperial College London. He has published peer-reviewed research and has extensive experience preparing students for competitive admissions tests including the PAT, MAT, and ESAT.</dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-q">Is this course suitable for Year 12 students as well as Year 13?</dt>
+            <dd class="faq-a">Yes. While the ESAT is sat in October of Year 13, starting preparation in Year 12 allows more time to develop the depth of understanding the test rewards. Year 12 students who begin early are often better placed to consolidate their A-level content alongside ESAT-specific technique. Dr Korte can advise on the most suitable timing for individual students.</dd>
+          </div>
+
+        </dl>
+      </div>
+    </section>
+
   </main>
 
   <!-- ── Footer ──────────────────────────────────────────── -->
@@ -780,8 +948,12 @@
           <a class="btn" href="https://physicsandmathscourses.com/book-a-course/oxford-pat-course.html" target="_blank" rel="noopener noreferrer">Go to physicsandmathscourses.com</a>
         </div>
         <div class="footer-rule"></div>
+        <div class="footer-links">
+          <a href="https://physicscourses.co.uk" target="_blank" rel="noopener noreferrer">A-level Physics courses</a>
+          <a href="https://alevelmathsonline.co.uk" target="_blank" rel="noopener noreferrer">A-level Maths courses</a>
+        </div>
         <div class="footer-meta">
-          <span>&copy; 2025 physicsandmathscourses.com</span>
+          <span>&copy; 2026 physicsandmathscourses.com</span>
           <span>ESAT preparation &mdash; Cambridge Physics, Physics &amp; Philosophy, Engineering</span>
           <a href="https://physicsandmathscourses.com/our-services/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         </div>
