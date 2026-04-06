@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
   <title>Oxford PAT &amp; ESAT Preparation Course Online | Dr Anthony Korte</title>
-  <meta name="description" content="Intensive online Oxford PAT and ESAT preparation. Small group tuition in Mathematics 1, Mathematics 2, and Physics — taught by Dr Anthony Korte, Oxford First and Imperial College PhD. September 2026 dates available.">
+  <meta name="description" content="Intensive online Oxford PAT &amp; ESAT preparation. Small groups in Mathematics 1, Mathematics 2, and Physics. September 2026 — taught by Dr Anthony Korte, Oxford First, Imperial PhD.">
+  <meta name="theme-color" content="#0077bb">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <link rel="canonical" href="https://oxfordpat.co.uk/">
   <link rel="icon" href="favicon.ico">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="preload" as="image" href="hero.jpeg">
+  <link rel="preload" as="image" href="hero.webp" type="image/webp">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -29,6 +31,7 @@
   <meta name="twitter:title" content="Oxford PAT &amp; ESAT Preparation Course Online">
   <meta name="twitter:description" content="Intensive online Oxford PAT and ESAT preparation. Small group tuition in Mathematics 1, Mathematics 2, and Physics — taught by Dr Anthony Korte.">
   <meta name="twitter:image" content="https://physicsandmathscourses.com/images/anthony-korte.jpg">
+  <meta name="twitter:image:alt" content="Dr Anthony Korte - Oxford PAT and ESAT Preparation Tutor">
 
   <style>
     /* ── Reset & base ─────────────────────────────────────── */
@@ -148,7 +151,7 @@
       display: flex;
       align-items: center;
       background-color: #111;
-      background-image: url('hero.jpeg');
+      background-image: url('hero.webp');
       background-size: cover;
       background-position: center;
     }
@@ -318,7 +321,8 @@
       padding: 1.75rem;
     }
 
-    .card h3 {
+    .card-module-label {
+      display: block;
       font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.1em;
@@ -327,12 +331,13 @@
       margin-bottom: 0.5rem;
     }
 
-    .card .card-title {
+    .card h3 {
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--ink);
       margin-bottom: 1rem;
       letter-spacing: -0.01em;
+      text-transform: none;
     }
 
     .card ul {
@@ -648,6 +653,7 @@
     "@graph": [
       {
         "@type": "WebSite",
+        "@id": "https://oxfordpat.co.uk/#website",
         "url": "https://oxfordpat.co.uk/",
         "name": "OxfordPAT.co.uk",
         "description": "Online Oxford PAT and ESAT preparation courses. Small groups. Taught by Dr Anthony Korte, Oxford First and Imperial College PhD."
@@ -658,22 +664,44 @@
         "name": "Dr Anthony Korte",
         "honorificPrefix": "Dr",
         "jobTitle": "Physics and Mathematics Tutor",
-        "description": "Oxford First and Imperial College PhD physicist. Teaches online Oxford PAT and ESAT preparation courses in small groups.",
-        "image": "https://physicsandmathscourses.com/images/anthony-korte.jpg",
+        "description": "Oxford First and Imperial College PhD physicist. Experienced PAT tutor and ESAT tutor, teaching online preparation courses for Oxford, Cambridge and Imperial College applicants.",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://physicsandmathscourses.com/images/anthony-korte.jpg",
+          "contentUrl": "https://physicsandmathscourses.com/images/anthony-korte.jpg"
+        },
         "url": "https://physicsandmathscourses.com",
         "sameAs": [
-          "https://uk.linkedin.com/in/anthony-korte-1066b559",
+          "https://www.linkedin.com/in/anthony-korte-1066b559",
           "https://twitter.com/PhysMathCourses"
         ],
+        "affiliation": {
+          "@id": "https://physicsandmathscourses.com/#organization"
+        },
         "alumniOf": [
           {"@type": "CollegeOrUniversity", "name": "University of Oxford"},
           {"@type": "CollegeOrUniversity", "name": "University College London"},
           {"@type": "CollegeOrUniversity", "name": "Imperial College London"}
         ],
         "hasCredential": [
-          "First Class degree in Physics, University of Oxford",
-          "MSc with Distinction in Mathematical Modelling, University College London",
-          "PhD in Theoretical Physics, Imperial College London"
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "First Class degree in Physics",
+            "credentialCategory": "degree",
+            "recognizedBy": {"@type": "CollegeOrUniversity", "name": "University of Oxford"}
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "MSc with Distinction in Mathematical Modelling",
+            "credentialCategory": "degree",
+            "recognizedBy": {"@type": "CollegeOrUniversity", "name": "University College London"}
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "PhD in Theoretical Physics",
+            "credentialCategory": "degree",
+            "recognizedBy": {"@type": "CollegeOrUniversity", "name": "Imperial College London"}
+          }
         ],
         "award": [
           "2nd Place Overall in Oxford Physics Entrance Examinations (worldwide)",
@@ -688,6 +716,7 @@
       },
       {
         "@type": "Course",
+        "@id": "https://oxfordpat.co.uk/#course",
         "name": "Oxford PAT & ESAT Preparation Course Online",
         "description": "Intensive online preparation for the Oxford Physics Aptitude Test (PAT) and the Engineering and Science Admissions Test (ESAT). Small group tuition in Mathematics 1, Mathematics 2, and Physics.",
         "provider": {
@@ -701,15 +730,17 @@
           "name": "Dr Anthony Korte"
         },
         "courseMode": "online",
+        "inLanguage": "en-GB",
         "educationalLevel": "A-Level / Pre-University",
+        "coursePrerequisites": "A-level Mathematics and Physics (Year 12 or Year 13)",
+        "image": "https://physicsandmathscourses.com/images/anthony-korte.jpg",
         "url": "https://oxfordpat.co.uk/",
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.6",
           "reviewCount": "17",
           "bestRating": "5",
-          "worstRating": "1",
-          "url": "https://uk.trustpilot.com/review/physicsandmathscourses.com"
+          "worstRating": "1"
         },
         "hasCourseInstance": [
           {
@@ -718,6 +749,18 @@
             "courseMode": "online",
             "startDate": "2026-09-19",
             "endDate": "2026-09-20",
+            "location": {
+              "@type": "VirtualLocation",
+              "url": "https://zoom.us"
+            },
+            "instructor": {
+              "@type": "Person",
+              "@id": "https://physicsandmathscourses.com/#anthony-korte",
+              "name": "Dr Anthony Korte"
+            },
+            "organizer": {
+              "@id": "https://physicsandmathscourses.com/#organization"
+            },
             "offers": {
               "@type": "Offer",
               "price": "295",
@@ -732,6 +775,18 @@
             "courseMode": "online",
             "startDate": "2026-09-19",
             "endDate": "2026-09-19",
+            "location": {
+              "@type": "VirtualLocation",
+              "url": "https://zoom.us"
+            },
+            "instructor": {
+              "@type": "Person",
+              "@id": "https://physicsandmathscourses.com/#anthony-korte",
+              "name": "Dr Anthony Korte"
+            },
+            "organizer": {
+              "@id": "https://physicsandmathscourses.com/#organization"
+            },
             "offers": {
               "@type": "Offer",
               "price": "195",
@@ -746,6 +801,18 @@
             "courseMode": "online",
             "startDate": "2026-09-20",
             "endDate": "2026-09-20",
+            "location": {
+              "@type": "VirtualLocation",
+              "url": "https://zoom.us"
+            },
+            "instructor": {
+              "@type": "Person",
+              "@id": "https://physicsandmathscourses.com/#anthony-korte",
+              "name": "Dr Anthony Korte"
+            },
+            "organizer": {
+              "@id": "https://physicsandmathscourses.com/#organization"
+            },
             "offers": {
               "@type": "Offer",
               "price": "195",
@@ -758,9 +825,10 @@
       },
       {
         "@type": "EducationalOrganization",
+        "@id": "https://physicsandmathscourses.com/#organization",
         "name": "Physics and Maths Courses",
-        "url": "https://oxfordpat.co.uk/",
-        "sameAs": "https://physicsandmathscourses.com",
+        "url": "https://physicsandmathscourses.com",
+        "sameAs": "https://oxfordpat.co.uk/",
         "description": "Online physics and mathematics tuition for university admissions tests, including Oxford PAT and ESAT preparation."
       },
       {
@@ -771,12 +839,12 @@
             "name": "What is the ESAT?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The Engineering and Science Admissions Test (ESAT) is a written admissions test required for applications to Physics, Physics & Philosophy, and all Engineering courses at Cambridge University. It consists of multiple-choice questions across three modules: Mathematics 1, Mathematics 2, and Physics. The test is taken in October of Year 13."
+              "text": "The Engineering and Science Admissions Test (ESAT) is a written admissions test required for applications to Physics, Physics & Philosophy, and Engineering courses at Oxford University, Cambridge University, and Imperial College London. It consists of multiple-choice questions across three modules: Mathematics 1, Mathematics 2, and Physics. Each module is 40 minutes and there is no negative marking. The test is taken in October of Year 13 and carries significant weight in the admissions decision."
             }
           },
           {
             "@type": "Question",
-            "name": "Which Cambridge courses require the ESAT?",
+            "name": "Which courses require the ESAT?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "The ESAT is required for Cambridge University applications to Physics, Physics & Philosophy, and all Engineering courses (including Chemical Engineering). Applicants to these courses must sit Mathematics 1, Mathematics 2, and Physics modules."
@@ -787,7 +855,7 @@
             "name": "What does the ESAT preparation course cover?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The course covers all three ESAT modules in full: Mathematics 1 (algebra, functions, calculus, sequences and series), Mathematics 2 (further calculus, differential equations, complex numbers, vectors), and Physics (mechanics, waves, electricity, fields, thermal physics, modern physics). The focus is on problem-solving technique, exam strategy, and accuracy under timed conditions."
+              "text": "The course covers all three ESAT modules in full: Mathematics 1 (algebra, functions, calculus, sequences and series), Mathematics 2 (further calculus, differential equations, complex numbers, vectors), and Physics (mechanics, waves, electricity, fields, thermal physics, modern physics). Each module is 40 minutes of multiple-choice questions. The focus is on problem-solving technique, exam strategy, accuracy under timed conditions, and extensive practice with past-paper style questions."
             }
           },
           {
@@ -803,7 +871,7 @@
             "name": "What makes Dr Korte qualified to teach ESAT preparation?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Dr Korte holds a First Class degree in Physics from the University of Oxford, an MSc with Distinction in Mathematical Modelling from University College London, and a PhD in Theoretical Physics from Imperial College London. He has published peer-reviewed research and has extensive experience preparing students for competitive admissions tests including the Oxford PAT, MAT, and ESAT."
+              "text": "Dr Korte holds a First Class degree in Physics from the University of Oxford (ranked 2nd in entrance examinations worldwide), an MSc with Distinction in Mathematical Modelling from University College London, and a PhD in Theoretical Physics from Imperial College London. He is a Member of the Institute of Physics (MInstP) and has extensive experience as a PAT tutor and ESAT tutor, helping students secure offers from Oxford and Cambridge."
             }
           },
           {
@@ -812,6 +880,30 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Yes. While the ESAT is sat in October of Year 13, starting preparation in Year 12 allows more time to develop the depth of understanding the test rewards. Year 12 students who begin early are often better placed to consolidate their A-level content alongside ESAT-specific technique. Dr Korte can advise on the most suitable timing for individual students."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does the ESAT preparation course cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "September 2026 course fees: 2-day Maths & Physics — £295; 1-day Maths only — £195; 1-day Physics only — £195. 1-to-1 tuition is also available at £70 per hour. Full details and booking at physicsandmathscourses.com."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When are the September 2026 ESAT courses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The September 2026 courses run on 19–20 September 2026. The 2-day course covers both days; the 1-day Maths course runs on 19 September; the 1-day Physics course runs on 20 September. Places are limited — early booking is recommended."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "I was looking for Oxford PAT preparation — is this the right course?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. This site was originally dedicated to Oxford PAT preparation. The Oxford Physics Aptitude Test (PAT) has been replaced by the ESAT for Oxford, Cambridge, and Imperial College applications. Students searching for an oxford pat online course or esat course online will find this preparation programme directly relevant. The course has been fully updated for the current ESAT syllabus and format."
             }
           }
         ]
@@ -849,7 +941,7 @@
           <div>
             <span class="section-label">The Admissions Test</span>
             <h2 id="esat-heading">What is the ESAT?</h2>
-            <p class="lead">The Engineering and Science Admissions Test (ESAT) is required for all Cambridge University applications to Physics, Physics &amp; Philosophy, and Engineering. It is a competitive, paper-based test taken in October of Year 13, and performance in it carries significant weight in the admissions decision.</p>
+            <p class="lead">The Engineering and Science Admissions Test (ESAT) is required for applications to Physics, Physics &amp; Philosophy, and Engineering courses at Oxford University, Cambridge University, and Imperial College London. It is a competitive, paper-based test taken in October of Year 13, and performance in it carries significant weight in the admissions decision.</p>
           </div>
           <div>
             <p style="font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem;">Required modules for your course</p>
@@ -874,8 +966,8 @@
         <div class="cards-grid">
 
           <article class="card" aria-label="Mathematics 1 module">
-            <h3>Module 1</h3>
-            <p class="card-title">Mathematics 1</p>
+            <span class="card-module-label">Module 1</span>
+            <h3>Mathematics 1</h3>
             <ul>
               <li>Algebra and functions</li>
               <li>Sequences and series</li>
@@ -886,8 +978,8 @@
           </article>
 
           <article class="card" aria-label="Mathematics 2 module">
-            <h3>Module 2</h3>
-            <p class="card-title">Mathematics 2</p>
+            <span class="card-module-label">Module 2</span>
+            <h3>Mathematics 2</h3>
             <ul>
               <li>Further calculus</li>
               <li>Differential equations</li>
@@ -898,8 +990,8 @@
           </article>
 
           <article class="card" aria-label="Physics module">
-            <h3>Module 3</h3>
-            <p class="card-title">Physics</p>
+            <span class="card-module-label">Module 3</span>
+            <h3>Physics</h3>
             <ul>
               <li>Mechanics and dynamics</li>
               <li>Waves and optics</li>
@@ -918,7 +1010,7 @@
       <div class="container">
         <span class="section-label">Your Tutor</span>
         <h2 id="about-heading">About Dr Anthony Korte</h2>
-        <p class="about-lede">Dr Korte brings first-hand knowledge of what top universities test and why. A former Oxford Physics student ranked 2nd worldwide in entrance examinations, he has extensive experience preparing students for the Oxford Physics Aptitude Test (PAT), the ESAT, and other competitive university admissions tests.</p>
+        <p class="about-lede">Dr Korte brings first-hand knowledge of what top universities test and why. A former Oxford Physics student ranked 2nd worldwide in entrance examinations, he works as an experienced PAT tutor and ESAT tutor with a strong record of preparing students for the Oxford Physics Aptitude Test (PAT), the ESAT, and other competitive university admissions tests.</p>
 
         <dl class="credentials" aria-label="Academic credentials">
 
@@ -1013,7 +1105,7 @@
         <span class="section-label">For returning visitors</span>
         <h2 id="pat-heading">Previously the Oxford PAT</h2>
         <div class="pat-note-inner">
-          <p>Students and parents who have searched for Oxford PAT preparation will find this course directly relevant. The Oxford Physics Aptitude Test (PAT) was an Oxford University admissions test and the inspiration for this site&rsquo;s domain name, which retains search value for those familiar with the legacy name. Cambridge now uses the ESAT for applicants to Physics, Physics &amp; Philosophy, and Engineering. Our preparation programme has been fully updated for the current ESAT format and syllabus. Oxford University&rsquo;s own preparation course &mdash; formerly known as &ldquo;Preparing for Oxford PAT&rdquo; &mdash; is now called &ldquo;Preparing for Oxford Physics&rdquo;.</p>
+          <p>Students and parents searching for an oxford pat online course or esat course online will find this programme directly relevant. The Oxford Physics Aptitude Test (PAT) was an Oxford University admissions test and the inspiration for this site&rsquo;s domain name, which retains search value for those familiar with the legacy name. Oxford, Cambridge, and Imperial College now use the ESAT for applicants to Physics, Physics &amp; Philosophy, and Engineering. Our preparation programme has been fully updated for the current ESAT format and syllabus. Oxford University&rsquo;s own preparation course &mdash; formerly known as &ldquo;Preparing for Oxford PAT&rdquo; &mdash; is now called &ldquo;Preparing for Oxford Physics&rdquo;.</p>
         </div>
       </div>
     </section>
@@ -1027,17 +1119,17 @@
 
           <div class="faq-item">
             <dt class="faq-q">What is the ESAT?</dt>
-            <dd class="faq-a">The Engineering and Science Admissions Test (ESAT) is a written admissions test required for applications to Physics, Physics &amp; Philosophy, and all Engineering courses at Cambridge University. It consists of multiple-choice questions across three modules: Mathematics 1, Mathematics 2, and Physics. The test is taken in October of Year 13.</dd>
+            <dd class="faq-a">The Engineering and Science Admissions Test (ESAT) is a written admissions test required for applications to Physics, Physics &amp; Philosophy, and Engineering courses at Oxford University, Cambridge University, and Imperial College London. It consists of multiple-choice questions across three modules: Mathematics 1, Mathematics 2, and Physics. Each module is 40 minutes and there is no negative marking. The test is taken in October of Year 13 and carries significant weight in the admissions decision.</dd>
           </div>
 
           <div class="faq-item">
-            <dt class="faq-q">Which Cambridge courses require the ESAT?</dt>
+            <dt class="faq-q">Which courses require the ESAT?</dt>
             <dd class="faq-a">The ESAT is required for Cambridge University applications to Physics, Physics &amp; Philosophy, and all Engineering courses (including Chemical Engineering). Applicants to these courses must sit Mathematics 1, Mathematics 2, and Physics modules.</dd>
           </div>
 
           <div class="faq-item">
             <dt class="faq-q">What does the ESAT preparation course cover?</dt>
-            <dd class="faq-a">The course covers all three ESAT modules in full: Mathematics 1 (algebra, functions, calculus, sequences and series), Mathematics 2 (further calculus, differential equations, complex numbers, vectors), and Physics (mechanics, waves, electricity, fields, thermal physics, modern physics). The focus is on problem-solving technique, exam strategy, and accuracy under timed conditions.</dd>
+            <dd class="faq-a">The course covers all three ESAT modules in full: Mathematics 1 (algebra, functions, calculus, sequences and series), Mathematics 2 (further calculus, differential equations, complex numbers, vectors), and Physics (mechanics, waves, electricity, fields, thermal physics, modern physics). Each module is 40 minutes of multiple-choice questions. The focus is on problem-solving technique, exam strategy, accuracy under timed conditions, and extensive practice with past-paper style questions.</dd>
           </div>
 
           <div class="faq-item">
@@ -1047,12 +1139,27 @@
 
           <div class="faq-item">
             <dt class="faq-q">What makes Dr Korte qualified to teach ESAT preparation?</dt>
-            <dd class="faq-a">Dr Korte holds a First Class degree in Physics from the University of Oxford, an MSc with Distinction in Mathematical Modelling from University College London, and a PhD in Theoretical Physics from Imperial College London. He has published peer-reviewed research and has extensive experience preparing students for competitive admissions tests including the PAT, MAT, and ESAT.</dd>
+            <dd class="faq-a">Dr Korte holds a First Class degree in Physics from the University of Oxford (ranked 2nd in entrance examinations worldwide), an MSc with Distinction in Mathematical Modelling from University College London, and a PhD in Theoretical Physics from Imperial College London. He is a Member of the Institute of Physics (MInstP) and has extensive experience as a PAT tutor and ESAT tutor, helping students secure offers from Oxford and Cambridge.</dd>
           </div>
 
           <div class="faq-item">
             <dt class="faq-q">Is this course suitable for Year 12 students as well as Year 13?</dt>
             <dd class="faq-a">Yes. While the ESAT is sat in October of Year 13, starting preparation in Year 12 allows more time to develop the depth of understanding the test rewards. Year 12 students who begin early are often better placed to consolidate their A-level content alongside ESAT-specific technique. Dr Korte can advise on the most suitable timing for individual students.</dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-q">How much does the ESAT preparation course cost?</dt>
+            <dd class="faq-a">September 2026 course fees: 2-day Maths &amp; Physics &mdash; &pound;295; 1-day Maths only &mdash; &pound;195; 1-day Physics only &mdash; &pound;195. 1-to-1 tuition is also available at &pound;70 per hour. Full details and booking at physicsandmathscourses.com.</dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-q">When are the September 2026 ESAT courses?</dt>
+            <dd class="faq-a">The September 2026 courses run on 19&ndash;20 September 2026. The 2-day course covers both days; the 1-day Maths course runs on 19 September; the 1-day Physics course runs on 20 September. Places are limited &mdash; early booking is recommended.</dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-q">I was looking for Oxford PAT preparation &mdash; is this the right course?</dt>
+            <dd class="faq-a">Yes. This site was originally dedicated to Oxford PAT preparation. The Oxford Physics Aptitude Test (PAT) has been replaced by the ESAT for Oxford, Cambridge, and Imperial College applications. Students searching for an oxford pat online course or esat course online will find this preparation programme directly relevant. The course has been fully updated for the current ESAT syllabus and format.</dd>
           </div>
 
         </dl>

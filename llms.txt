@@ -2,6 +2,8 @@
 
 Online Oxford PAT and ESAT preparation courses. Small groups. Taught by Dr Anthony Korte (Oxford First, UCL MSc, Imperial College PhD).
 
+OxfordPAT.co.uk provides intensive online preparation for the Oxford Physics Aptitude Test (PAT) and the Engineering and Science Admissions Test (ESAT), which is now required for applications to Physics, Engineering, and related courses at Oxford University, Cambridge University, and Imperial College London. Courses are taught in small groups via Zoom by Dr Anthony Korte, who holds a First Class degree in Physics from Oxford, an MSc with Distinction from UCL, and a PhD from Imperial College London. The programme covers all three ESAT modules — Mathematics 1, Mathematics 2, and Physics — with emphasis on problem-solving technique and exam strategy.
+
 ## What this site covers
 
 - Intensive online preparation for the Oxford Physics Aptitude Test (PAT)
@@ -10,6 +12,10 @@ Online Oxford PAT and ESAT preparation courses. Small groups. Taught by Dr Antho
 - Small group tuition via Zoom
 - Mathematics 1, Mathematics 2, and Physics modules covered in full
 - Year 12 and Year 13 students
+
+## Note on the Oxford PAT
+
+The Oxford Physics Aptitude Test (PAT) was the original focus of this site and its domain name. The PAT has been replaced by the ESAT for Oxford, Cambridge, and Imperial College admissions. Students searching for oxford pat online course preparation will find this programme directly relevant; the mathematics and physics content is closely related and this course has been fully updated for the ESAT syllabus.
 
 ## Tutor
 
@@ -30,3 +36,7 @@ Full course details, dates and booking at https://physicsandmathscourses.com/boo
 
 - A-level Physics revision courses: https://physicscourses.co.uk
 - A-level Maths courses: https://alevelmathsonline.co.uk
+
+Last updated: April 2026
+
+Licence: All rights reserved. This file is provided for AI crawler indexing only.
