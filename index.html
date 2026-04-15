@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://oxfordpat.co.uk/">
   <link rel="icon" href="favicon.ico">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="preload" as="image" href="hero.webp" type="image/webp">
+  <link rel="preload" as="image" href="hero.webp" type="image/webp" fetchpriority="high">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -32,620 +32,6 @@
   <meta name="twitter:description" content="Intensive online Oxford PAT and ESAT preparation. Small group tuition in Mathematics 1, Mathematics 2, and Physics — taught by Dr Anthony Korte.">
   <meta name="twitter:image" content="https://physicsandmathscourses.com/images/anthony-korte.jpg">
   <meta name="twitter:image:alt" content="Dr Anthony Korte - Oxford PAT and ESAT Preparation Tutor">
-
-  <style>
-    /* ── Reset & base ─────────────────────────────────────── */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --blue:       #0077bb;
-      --blue-dark:  #005f99;
-      --blue-pale:  #e8f3fa;
-      --ink:        #1a1a1a;
-      --ink-mid:    #444;
-      --ink-light:  #666;
-      --rule:       #d8d8d8;
-      --bg-white:   #ffffff;
-      --bg-grey:    #f7f7f7;
-      --font:       "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-
-    html {
-      font-size: 16px;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font);
-      color: var(--ink);
-      background: var(--bg-white);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
-    }
-
-    /* ── Typography helpers ────────────────────────────────── */
-    .section-label {
-      display: block;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 0.75rem;
-    }
-
-    h2 {
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      margin-bottom: 1rem;
-    }
-
-    h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: var(--ink);
-      margin-bottom: 0.75rem;
-    }
-
-    p {
-      color: var(--ink-mid);
-      line-height: 1.7;
-    }
-
-    /* ── Layout ────────────────────────────────────────────── */
-    .container {
-      max-width: 1060px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    section {
-      padding: 4.5rem 0;
-    }
-
-    main > section:nth-child(even) {
-      background: var(--bg-grey);
-    }
-
-    /* ── Header strip ──────────────────────────────────────── */
-    .site-header {
-      background: var(--bg-white);
-      border-bottom: 1px solid var(--rule);
-      padding: 0.75rem 0;
-    }
-
-    .site-header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .site-header .wordmark {
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .site-header .wordmark span {
-      color: var(--blue);
-    }
-
-    /* ── Hero ──────────────────────────────────────────────── */
-    .hero {
-      position: relative;
-      min-height: 88vh;
-      display: flex;
-      align-items: center;
-      background-color: #111;
-      background-image: url('hero.webp');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.55);
-    }
-
-    .hero .container {
-      position: relative;
-      z-index: 1;
-      padding-top: 5rem;
-      padding-bottom: 5rem;
-    }
-
-    .hero-kicker {
-      display: block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 1.25rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5.5vw, 3.4rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      color: #fff;
-      max-width: 18ch;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      font-weight: 400;
-      line-height: 1.55;
-      color: rgba(255,255,255,0.85);
-      max-width: 48ch;
-      margin-bottom: 2.5rem;
-    }
-
-    /* ── CTA button ────────────────────────────────────────── */
-    .btn {
-      display: inline-block;
-      background: var(--blue);
-      color: #fff;
-      font-family: var(--font);
-      font-size: 0.875rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.85rem 2rem;
-      border: none;
-      cursor: pointer;
-      transition: background 0.15s ease;
-    }
-
-    .btn:hover,
-    .btn:focus {
-      background: var(--blue-dark);
-      outline: none;
-    }
-
-    .btn:focus-visible {
-      outline: 3px solid #fff;
-      outline-offset: 2px;
-    }
-
-    .btn--outline {
-      background: transparent;
-      border: 2px solid var(--blue);
-      color: var(--blue);
-    }
-
-    .btn--outline:hover,
-    .btn--outline:focus {
-      background: var(--blue);
-      color: #fff;
-    }
-
-    /* ── What is the ESAT ──────────────────────────────────── */
-    .esat-intro {
-      background: var(--bg-white);
-    }
-
-    .esat-intro .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    @media (min-width: 680px) {
-      .esat-intro .intro-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: start;
-      }
-    }
-
-    .esat-intro .intro-grid .lead {
-      font-size: 1.1rem;
-      font-weight: 400;
-      line-height: 1.65;
-      color: var(--ink-mid);
-    }
-
-    .modules-list {
-      list-style: none;
-      border-top: 1px solid var(--rule);
-    }
-
-    .modules-list li {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      padding: 0.85rem 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 0.95rem;
-      color: var(--ink-mid);
-    }
-
-    .modules-list li::before {
-      content: counter(module-counter, decimal-leading-zero);
-      counter-increment: module-counter;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: var(--blue);
-      flex-shrink: 0;
-      width: 1.5rem;
-    }
-
-    .modules-list {
-      counter-reset: module-counter;
-    }
-
-    /* ── Course covers ─────────────────────────────────────── */
-    .covers {
-      background: var(--bg-grey);
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-
-    @media (min-width: 620px) {
-      .cards-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .card {
-      background: var(--bg-white);
-      border-top: 3px solid var(--blue);
-      border-radius: 0 0 4px 4px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.04);
-      padding: 1.75rem;
-    }
-
-    .card-module-label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 0.5rem;
-    }
-
-    .card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
-      text-transform: none;
-    }
-
-    .card ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .card ul li {
-      font-size: 0.9rem;
-      color: var(--ink-mid);
-      line-height: 1.6;
-      padding: 0.3rem 0;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .card ul li:last-child {
-      border-bottom: none;
-    }
-
-    /* ── About Dr Korte ────────────────────────────────────── */
-    .about {
-      background: var(--bg-white);
-    }
-
-    .credentials {
-      margin-top: 2rem;
-      border-top: 1px solid var(--rule);
-    }
-
-    .credential-row {
-      display: flex;
-      align-items: baseline;
-      gap: 1.5rem;
-      padding: 1.1rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .credential-label {
-      flex-shrink: 0;
-      width: 8rem;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--blue);
-      line-height: 1.4;
-    }
-
-    .credential-value {
-      font-size: 0.95rem;
-      color: var(--ink-mid);
-      line-height: 1.5;
-    }
-
-    .about-lede {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--ink-mid);
-      max-width: 60ch;
-      margin-top: 0.5rem;
-    }
-
-    @media (max-width: 480px) {
-      .credential-row {
-        flex-direction: column;
-        gap: 0.35rem;
-      }
-
-      .credential-label {
-        width: auto;
-      }
-    }
-
-    /* ── Course format ─────────────────────────────────────── */
-    .format {
-      background: var(--bg-grey);
-    }
-
-    .format-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-      margin-top: 2.5rem;
-    }
-
-    @media (min-width: 640px) {
-      .format-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (min-width: 900px) {
-      .format-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    .format-item {
-      padding: 1.5rem 0;
-      border-top: 2px solid var(--blue);
-    }
-
-    .format-item .fi-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 0.5rem;
-    }
-
-    .format-item .fi-value {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.35;
-      margin-bottom: 0.4rem;
-    }
-
-    .format-item .fi-detail {
-      font-size: 0.85rem;
-      color: var(--ink-light);
-      line-height: 1.5;
-    }
-
-    /* ── PAT legacy note ───────────────────────────────────── */
-    .pat-note {
-      background: var(--bg-white);
-    }
-
-    .pat-note-inner {
-      max-width: 56ch;
-      border-left: 3px solid var(--rule);
-      padding-left: 1.5rem;
-    }
-
-    .pat-note-inner p {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: var(--ink-light);
-    }
-
-    /* ── Footer ────────────────────────────────────────────── */
-    footer {
-      background: var(--ink);
-      color: rgba(255,255,255,0.55);
-      padding: 4rem 0 2.5rem;
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2rem;
-    }
-
-    .footer-cta-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-cta-text {
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.3;
-      letter-spacing: -0.015em;
-      margin-bottom: 1.25rem;
-    }
-
-    .footer-rule {
-      width: 100%;
-      height: 1px;
-      background: rgba(255,255,255,0.1);
-      margin-top: 1rem;
-    }
-
-    .footer-meta {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.5rem;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.35);
-    }
-
-    .footer-meta a {
-      color: rgba(255,255,255,0.5);
-      text-decoration: none;
-    }
-
-    .footer-meta a:hover {
-      color: #fff;
-    }
-
-    /* ── FAQ ────────────────────────────────────────────────── */
-    .faq {
-      background: var(--bg-grey);
-    }
-
-    .faq-list {
-      margin-top: 2rem;
-      border-top: 1px solid var(--rule);
-    }
-
-    .faq-item {
-      padding: 1.75rem 0;
-      border-bottom: 1px solid var(--rule);
-      max-width: 72ch;
-    }
-
-    .faq-q {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.4;
-      margin-bottom: 0.65rem;
-    }
-
-    .faq-a {
-      font-size: 0.95rem;
-      color: var(--ink-mid);
-      line-height: 1.7;
-    }
-
-    /* ── Footer links ────────────────────────────────────────── */
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-      font-size: 0.78rem;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.45);
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: rgba(255,255,255,0.8);
-    }
-
-    /* ── Format detail ─────────────────────────────────────── */
-    .format-detail {
-      font-size: 0.95rem;
-      color: var(--ink-mid);
-      line-height: 1.7;
-      margin-top: 1.75rem;
-      padding-top: 1.75rem;
-      border-top: 1px solid var(--rule);
-    }
-
-    /* ── Testimonials ──────────────────────────────────────── */
-    .testimonials {
-      background: var(--bg-white);
-    }
-
-    .testi-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .testi {
-      background: var(--bg-grey);
-      border-left: 3px solid var(--blue);
-      padding: 1.5rem;
-      margin: 0;
-    }
-
-    .testi__quote {
-      font-size: 1rem;
-      color: var(--ink-mid);
-      line-height: 1.6;
-      font-style: italic;
-      margin-bottom: 0.75rem;
-    }
-
-    .testi__attr {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--ink-light);
-    }
-
-    @media (max-width: 620px) {
-      .testi-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── Utility ───────────────────────────────────────────── */
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      white-space: nowrap;
-      border: 0;
-    }
-  </style>
 
   <script type="application/ld+json">
   {
@@ -911,285 +297,487 @@
     ]
   }
   </script>
-</head>
-<body>
 
-  <!-- ── Site header ─────────────────────────────────────── -->
-  <header class="site-header">
-    <div class="container">
-      <a class="wordmark" href="/">Oxford<span>PAT</span>.co.uk</a>
-      <a class="btn" href="https://physicsandmathscourses.com/book-a-course/oxford-pat-course.html" target="_blank" rel="noopener noreferrer">Book a Place</a>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand:       '#0077bb',
+            'brand-dk':  '#005d94',
+            navy:        '#0a1428',
+            ink:         '#1a1a2e',
+            'ink-mid':   '#3d3d58',
+            'ink-muted': '#6b6b88',
+            rule:        '#e0e0ec',
+            wash:        '#f4f5f9',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; color-scheme: light; }
+    body { font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
+    a { text-decoration: none; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .a1 { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) 0.05s both; }
+    .a2 { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) 0.20s both; }
+    .a3 { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) 0.35s both; }
+    .a4 { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) 0.48s both; }
+
+    .hero-bg {
+      background-image: linear-gradient(rgba(10,20,50,0.70), rgba(10,20,50,0.70)), url('hero.webp');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Blue-rule list (dark bg) */
+    .rule-list { list-style: none; }
+    .rule-list li { display: grid; grid-template-columns: 28px 1fr; align-items: start; gap: 0.75rem; }
+    .rule-list li::before { content: ''; display: block; width: 28px; height: 2px; background: #0077bb; margin-top: 0.62em; flex-shrink: 0; }
+
+    /* Module card hover */
+    .module-card { position: relative; transition: transform 0.2s, box-shadow 0.2s; }
+    .module-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #0077bb; transform: scaleX(0); transform-origin: left; transition: transform 0.25s cubic-bezier(0.22,1,0.36,1); }
+    .module-card:hover::before { transform: scaleX(1); }
+    .module-card:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(0,119,187,0.13); }
+
+    /* Pricing card hover */
+    .price-card { position: relative; transition: transform 0.2s, box-shadow 0.2s; }
+    .price-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #0077bb; transform: scaleX(0); transform-origin: left; transition: transform 0.25s cubic-bezier(0.22,1,0.36,1); }
+    .price-card:hover::before { transform: scaleX(1); }
+    .price-card:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(0,119,187,0.13); }
+
+    /* FAQ accordion */
+    .faq-answer { display: none; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-icon { display: inline-block; transition: transform 0.2s ease; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* CTA band */
+    .cta-band-bg {
+      background-color: #0077bb;
+      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    /* Modules list */
+    .modules-list { list-style: none; border-top: 1px solid rgba(255,255,255,0.12); }
+    .modules-list li { display: flex; align-items: baseline; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px; color: rgba(255,255,255,0.7); counter-increment: module-counter; }
+    .modules-list li::before { content: counter(module-counter, decimal-leading-zero); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; color: #0077bb; flex-shrink: 0; width: 1.5rem; }
+    .modules-list { counter-reset: module-counter; }
+
+    @media (max-width: 640px) { .hide-sm { display: none !important; } }
+  </style>
+</head>
+<body class="bg-white text-ink antialiased">
+
+  <!-- Brand bar -->
+  <div class="h-[4px] bg-brand" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="bg-white border-b border-rule sticky top-0 z-50">
+    <div class="max-w-[980px] mx-auto px-6 py-3.5 flex items-center justify-between">
+      <a href="https://oxfordpat.co.uk/"
+         class="text-[0.68rem] font-extrabold tracking-[0.22em] uppercase text-brand hover:text-brand-dk transition-colors">
+        Oxford<span class="text-ink">PAT</span>.co.uk
+      </a>
+      <a href="https://physicsandmathscourses.com/book-a-course/oxford-pat-course.html"
+         target="_blank" rel="noopener noreferrer"
+         class="hide-sm text-[0.72rem] font-bold tracking-wide border-[1.5px] border-brand text-brand px-3.5 py-1.5 rounded-sm hover:bg-brand hover:text-white transition-colors">
+        Book a place
+      </a>
     </div>
   </header>
 
-  <!-- ── Hero ────────────────────────────────────────────── -->
-  <section class="hero" aria-label="Introduction">
-    <div class="container">
-      <span class="hero-kicker">Online &middot; Small Groups &middot; Oxford, Cambridge &amp; Imperial</span>
-      <h1>Online Oxford PAT &amp; ESAT Preparation for Oxford, Cambridge and Imperial College</h1>
-      <p class="hero-sub">Intensive online preparation for the Oxford Physics Aptitude Test (PAT) and ESAT. Expert small group tuition in Mathematics&nbsp;1, Mathematics&nbsp;2, and Physics &mdash; taught by Dr&nbsp;Anthony Korte.</p>
-      <a class="btn" href="https://physicsandmathscourses.com/book-a-course/oxford-pat-course.html" target="_blank" rel="noopener noreferrer">View Course Details</a>
-    </div>
-  </section>
-
   <main>
 
-    <!-- ── What is the ESAT ──────────────────────────────── -->
-    <section class="esat-intro" aria-labelledby="esat-heading">
-      <div class="container">
-        <div class="intro-grid">
+    <!-- Hero -->
+    <section class="hero-bg min-h-[62vh] flex items-center py-20 sm:py-24">
+      <div class="max-w-[680px] mx-auto px-6 w-full">
+        <p class="a1 flex items-center gap-2.5 text-[0.65rem] font-extrabold tracking-[0.22em] uppercase text-white/60 mb-5">
+          <span class="block w-6 h-[2px] bg-brand flex-shrink-0"></span>
+          Online &middot; Small Groups &middot; Oxford, Cambridge &amp; Imperial
+        </p>
+        <h1 class="a2 text-[clamp(2.15rem,6.5vw,3.25rem)] font-bold text-white leading-[1.08] tracking-tight mb-5 max-w-[600px]">
+          Online Oxford PAT &amp; ESAT Preparation
+        </h1>
+        <p class="a3 text-[18px] text-white/75 leading-[1.72] max-w-[460px] mb-9">
+          Intensive online preparation for the Oxford Physics Aptitude Test and ESAT. Expert small group tuition in Mathematics&nbsp;1, Mathematics&nbsp;2, and Physics &mdash; taught by Dr&nbsp;Anthony Korte.
+        </p>
+        <a class="a4 inline-block bg-white text-brand text-[0.8rem] font-extrabold tracking-[0.07em] uppercase px-8 py-[0.85rem] rounded-sm hover:bg-navy hover:text-white transition-colors"
+           href="https://physicsandmathscourses.com/book-a-course/oxford-pat-course.html"
+           target="_blank" rel="noopener noreferrer">
+          View Course &amp; Book
+        </a>
+        <div class="a4 mt-9 flex flex-wrap gap-x-4 gap-y-2 text-[0.72rem] tracking-wider text-white/40">
+          <span>&#9733; 4.6/5 Trustpilot</span>
+          <span class="text-white/20">&middot;</span>
+          <span>Oxford First — 2nd worldwide</span>
+          <span class="text-white/20">&middot;</span>
+          <span>Imperial PhD</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credentials -->
+    <section class="bg-navy py-20">
+      <div class="max-w-[680px] mx-auto px-6">
+        <span class="block text-[0.62rem] font-extrabold tracking-[0.22em] uppercase text-brand mb-3">Your Tutor</span>
+        <h2 class="text-[clamp(1.6rem,4vw,2.1rem)] font-bold text-white tracking-tight leading-tight mb-7">Dr&nbsp;Anthony Korte &mdash; PAT &amp; ESAT Tutor</h2>
+        <ul class="rule-list space-y-3 mb-8">
+          <li>
+            <span class="text-[18px] leading-snug text-white/55">
+              <strong class="block text-white font-bold text-[18px]">First Class degree in Physics</strong>
+              University of Oxford &mdash; ranked 2nd in entrance examinations worldwide
+            </span>
+          </li>
+          <li>
+            <span class="text-[18px] leading-snug text-white/55">
+              <strong class="block text-white font-bold text-[18px]">MSc with Distinction in Mathematical Modelling</strong>
+              University College London
+            </span>
+          </li>
+          <li>
+            <span class="text-[18px] leading-snug text-white/55">
+              <strong class="block text-white font-bold text-[18px]">PhD in Theoretical Physics</strong>
+              Imperial College London
+            </span>
+          </li>
+        </ul>
+        <p class="text-[18px] text-white/85 leading-[1.7] pt-7 border-t border-white/10">
+          Dr Korte brings first-hand knowledge of what top universities test and why. A former Oxford Physics student ranked 2nd worldwide in entrance examinations, he is an experienced PAT tutor and ESAT tutor with a strong record of preparing students for Oxford, Cambridge and Imperial College applications. He is a Member of the Institute of Physics (MInstP) and has published peer-reviewed research in theoretical physics.
+        </p>
+      </div>
+    </section>
+
+    <!-- What is the ESAT -->
+    <section class="bg-white py-20 border-t border-rule">
+      <div class="max-w-[980px] mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
-            <span class="section-label">The Admissions Test</span>
-            <h2 id="esat-heading">What is the ESAT?</h2>
-            <p class="lead">The Engineering and Science Admissions Test (ESAT) is required for applications to Physics, Physics &amp; Philosophy, and Engineering courses at Oxford University, Cambridge University, and Imperial College London. It is a competitive, paper-based test taken in October of Year 13, and performance in it carries significant weight in the admissions decision.</p>
+            <span class="block text-[0.62rem] font-extrabold tracking-[0.22em] uppercase text-brand mb-3">The Admissions Test</span>
+            <h2 class="text-[clamp(1.5rem,3.5vw,1.9rem)] font-bold tracking-tight leading-tight mb-6 text-ink">What is the ESAT?</h2>
+            <p class="text-[18px] text-ink-mid leading-[1.7]">The Engineering and Science Admissions Test (ESAT) is required for applications to Physics, Physics &amp; Philosophy, and Engineering courses at Oxford University, Cambridge University, and Imperial College London. It is a competitive, paper-based test taken in October of Year&nbsp;13, and performance in it carries significant weight in the admissions decision.</p>
           </div>
           <div>
-            <p style="font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem;">Required modules for your course</p>
-            <ul class="modules-list">
-              <li><span><strong>Mathematics 1</strong> &mdash; compulsory for all ESAT applicants</span></li>
-              <li><span><strong>Mathematics 2</strong> &mdash; required for Physics, Physics &amp; Philosophy, and Engineering</span></li>
-              <li><span><strong>Physics</strong> &mdash; required for Physics, Physics &amp; Philosophy, and Engineering</span></li>
+            <p class="text-[0.62rem] font-extrabold tracking-[0.22em] uppercase text-brand mb-4">Required modules for your course</p>
+            <ul class="modules-list" style="border-top-color:#e0e0ec;">
+              <li style="border-bottom-color:#e0e0ec; color:#3d3d58;">
+                <span><strong class="text-ink">Mathematics 1</strong> &mdash; compulsory for all ESAT applicants</span>
+              </li>
+              <li style="border-bottom-color:#e0e0ec; color:#3d3d58;">
+                <span><strong class="text-ink">Mathematics 2</strong> &mdash; required for Physics, Physics &amp; Philosophy, and Engineering</span>
+              </li>
+              <li style="border-bottom-color:#e0e0ec; color:#3d3d58;">
+                <span><strong class="text-ink">Physics</strong> &mdash; required for Physics, Physics &amp; Philosophy, and Engineering</span>
+              </li>
             </ul>
-            <p style="margin-top:1rem;font-size:0.875rem;color:var(--ink-light);">Each module is 40 minutes and consists entirely of multiple-choice questions. There is no negative marking. All three modules are covered in this preparation programme.</p>
+            <p class="mt-4 text-[14px] text-ink-muted leading-relaxed">Each module is 40 minutes of multiple-choice questions. There is no negative marking. All three modules are covered in this preparation programme.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── What the course covers ────────────────────────── -->
-    <section class="covers" aria-labelledby="covers-heading">
-      <div class="container">
-        <span class="section-label">Syllabus</span>
-        <h2 id="covers-heading">What the Course Covers</h2>
-        <p style="max-width:52ch;">Each ESAT module is taught in full, with emphasis on technique, accuracy under time pressure, and recognising the question patterns the test consistently rewards.</p>
+    <!-- Course details: pricing + module cards -->
+    <section class="bg-wash py-20">
+      <div class="max-w-[980px] mx-auto px-6">
+        <span class="block text-[0.62rem] font-extrabold tracking-[0.22em] uppercase text-brand mb-3">Course details</span>
+        <h2 class="text-[clamp(1.5rem,3.5vw,1.9rem)] font-bold tracking-tight leading-tight mb-10 text-ink">Oxford PAT &amp; ESAT Preparation — September 2026</h2>
 
-        <div class="cards-grid">
+        <!-- Pricing cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
 
-          <article class="card" aria-label="Mathematics 1 module">
-            <span class="card-module-label">Module 1</span>
-            <h3>Mathematics 1</h3>
-            <ul>
-              <li>Algebra and functions</li>
-              <li>Sequences and series</li>
-              <li>Coordinate geometry</li>
-              <li>Trigonometry</li>
-              <li>Differentiation and integration</li>
-            </ul>
-          </article>
-
-          <article class="card" aria-label="Mathematics 2 module">
-            <span class="card-module-label">Module 2</span>
-            <h3>Mathematics 2</h3>
-            <ul>
-              <li>Further calculus</li>
-              <li>Differential equations</li>
-              <li>Complex numbers</li>
-              <li>Vectors and matrices</li>
-              <li>Proof and mathematical reasoning</li>
-            </ul>
-          </article>
-
-          <article class="card" aria-label="Physics module">
-            <span class="card-module-label">Module 3</span>
-            <h3>Physics</h3>
-            <ul>
-              <li>Mechanics and dynamics</li>
-              <li>Waves and optics</li>
-              <li>Electricity and magnetism</li>
-              <li>Fields and particle physics</li>
-              <li>Thermal and modern physics</li>
-            </ul>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── About Dr Korte ────────────────────────────────── -->
-    <section class="about" aria-labelledby="about-heading">
-      <div class="container">
-        <span class="section-label">Your Tutor</span>
-        <h2 id="about-heading">About Dr Anthony Korte</h2>
-        <p class="about-lede">Dr Korte brings first-hand knowledge of what top universities test and why. A former Oxford Physics student ranked 2nd worldwide in entrance examinations, he works as an experienced PAT tutor and ESAT tutor with a strong record of preparing students for the Oxford Physics Aptitude Test (PAT), the ESAT, and other competitive university admissions tests.</p>
-
-        <dl class="credentials" aria-label="Academic credentials">
-
-          <div class="credential-row">
-            <dt class="credential-label">Undergraduate</dt>
-            <dd class="credential-value">First Class degree in Physics, University of Oxford</dd>
+          <!-- 2-day -->
+          <div class="price-card bg-white rounded-sm shadow-sm overflow-hidden p-7 flex flex-col border-t-[3px] border-brand">
+            <span class="block text-[0.58rem] font-extrabold tracking-[0.2em] uppercase text-brand mb-2">Best value</span>
+            <h3 class="text-xl font-bold text-ink mb-1">2-Day Course</h3>
+            <p class="text-[13px] text-ink-muted mb-5">Maths 1, Maths 2 &amp; Physics</p>
+            <div class="space-y-2 text-[15px] text-ink-mid mb-5">
+              <div class="flex justify-between items-baseline">
+                <span>19&ndash;20 September 2026</span><span class="font-bold text-ink text-lg">&pound;295</span>
+              </div>
+              <div class="flex justify-between items-baseline text-[13px] text-ink-muted">
+                <span>Both days included</span>
+              </div>
+            </div>
+            <a href="https://physicsandmathscourses.com/book-a-course/oxford-pat-course.html"
+               target="_blank" rel="noopener noreferrer"
+               class="mt-auto block text-center text-[0.78rem] font-bold tracking-wider uppercase bg-brand text-white px-4 py-2.5 rounded-sm hover:bg-brand-dk transition-colors">
+              Book 2-Day &rarr;
+            </a>
           </div>
 
-          <div class="credential-row">
-            <dt class="credential-label">Postgraduate</dt>
-            <dd class="credential-value">MSc with Distinction in Mathematical Modelling, University College London</dd>
+          <!-- 1-day Maths -->
+          <div class="price-card bg-white rounded-sm shadow-sm overflow-hidden p-7 flex flex-col">
+            <span class="block text-[0.58rem] font-extrabold tracking-[0.2em] uppercase text-brand mb-2">1-day</span>
+            <h3 class="text-xl font-bold text-ink mb-1">Maths Only</h3>
+            <p class="text-[13px] text-ink-muted mb-5">Mathematics 1 &amp; Mathematics 2</p>
+            <div class="space-y-2 text-[15px] text-ink-mid mb-5">
+              <div class="flex justify-between items-baseline">
+                <span>19 September 2026</span><span class="font-bold text-ink text-lg">&pound;195</span>
+              </div>
+            </div>
+            <a href="https://physicsandmathscourses.com/book-a-course/oxford-pat-course.html"
+               target="_blank" rel="noopener noreferrer"
+               class="mt-auto block text-center text-[0.78rem] font-bold tracking-wider uppercase border-2 border-brand text-brand px-4 py-2.5 rounded-sm hover:bg-brand hover:text-white transition-colors">
+              Book Maths Day &rarr;
+            </a>
           </div>
 
-          <div class="credential-row">
-            <dt class="credential-label">Doctorate</dt>
-            <dd class="credential-value">PhD in Theoretical Physics, Imperial College London</dd>
-          </div>
-
-          <div class="credential-row">
-            <dt class="credential-label">Research</dt>
-            <dd class="credential-value">Published peer-reviewed research in theoretical physics</dd>
-          </div>
-
-          <div class="credential-row">
-            <dt class="credential-label">Teaching</dt>
-            <dd class="credential-value">Member of the Institute of Physics (MInstP). Extensive experience preparing students for competitive university admissions tests, including Oxford PAT, MAT, and ESAT</dd>
-          </div>
-
-        </dl>
-      </div>
-    </section>
-
-    <!-- ── Course format ─────────────────────────────────── -->
-    <section class="format" aria-labelledby="format-heading">
-      <div class="container">
-        <span class="section-label">How It Works</span>
-        <h2 id="format-heading">Course Format</h2>
-        <p style="max-width:52ch;">The programme is designed to be rigorous without being overwhelming &mdash; structured contact time, manageable group sizes, and a clear focus on what the test actually demands.</p>
-
-        <div class="format-grid">
-
-          <div class="format-item">
-            <p class="fi-label">Group size</p>
-            <p class="fi-value">Small group tuition</p>
-            <p class="fi-detail">Small groups allow targeted feedback and genuine discussion of problem-solving approaches.</p>
-          </div>
-
-          <div class="format-item">
-            <p class="fi-label">Delivery</p>
-            <p class="fi-value">Online via Zoom</p>
-            <p class="fi-detail">Interactive sessions with screen-sharing and real-time working through problems.</p>
-          </div>
-
-          <div class="format-item">
-            <p class="fi-label">Coverage</p>
-            <p class="fi-value">All three ESAT modules</p>
-            <p class="fi-detail">Mathematics 1, Mathematics 2, and Physics taught in a structured sequence.</p>
-          </div>
-
-          <div class="format-item">
-            <p class="fi-label">Focus</p>
-            <p class="fi-value">Technique and strategy</p>
-            <p class="fi-detail">Emphasis on problem-solving method, not just content recall. Timed practice under exam conditions.</p>
+          <!-- 1-day Physics -->
+          <div class="price-card bg-white rounded-sm shadow-sm overflow-hidden p-7 flex flex-col">
+            <span class="block text-[0.58rem] font-extrabold tracking-[0.2em] uppercase text-brand mb-2">1-day</span>
+            <h3 class="text-xl font-bold text-ink mb-1">Physics Only</h3>
+            <p class="text-[13px] text-ink-muted mb-5">Physics module in full</p>
+            <div class="space-y-2 text-[15px] text-ink-mid mb-5">
+              <div class="flex justify-between items-baseline">
+                <span>20 September 2026</span><span class="font-bold text-ink text-lg">&pound;195</span>
+              </div>
+            </div>
+            <a href="https://physicsandmathscourses.com/book-a-course/oxford-pat-course.html"
+               target="_blank" rel="noopener noreferrer"
+               class="mt-auto block text-center text-[0.78rem] font-bold tracking-wider uppercase border-2 border-brand text-brand px-4 py-2.5 rounded-sm hover:bg-brand hover:text-white transition-colors">
+              Book Physics Day &rarr;
+            </a>
           </div>
 
         </div>
-        <p class="format-detail">September 2026 courses: 2-day Maths &amp; Physics &mdash; &pound;295; 1-day Maths or Physics &mdash; &pound;195 each. 1-to-1 tuition also available at &pound;70/hour. Full details and booking at physicsandmathscourses.com.</p>
+
+        <!-- Module syllabus cards -->
+        <p class="text-[0.62rem] font-extrabold tracking-[0.22em] uppercase text-brand mb-5">Syllabus coverage</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+          <div class="module-card bg-white rounded-sm shadow-sm overflow-hidden p-6">
+            <span class="block text-[0.58rem] font-extrabold tracking-[0.2em] uppercase text-brand mb-2">Module 1</span>
+            <h3 class="text-[1rem] font-bold text-ink mb-4" style="font-family:'Playfair Display',Georgia,serif;">Mathematics 1</h3>
+            <ul class="space-y-1.5 text-[14px] text-ink-mid">
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Algebra and functions</li>
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Sequences and series</li>
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Coordinate geometry</li>
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Trigonometry</li>
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Differentiation and integration</li>
+            </ul>
+          </div>
+
+          <div class="module-card bg-white rounded-sm shadow-sm overflow-hidden p-6">
+            <span class="block text-[0.58rem] font-extrabold tracking-[0.2em] uppercase text-brand mb-2">Module 2</span>
+            <h3 class="text-[1rem] font-bold text-ink mb-4" style="font-family:'Playfair Display',Georgia,serif;">Mathematics 2</h3>
+            <ul class="space-y-1.5 text-[14px] text-ink-mid">
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Further calculus</li>
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Differential equations</li>
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Complex numbers</li>
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Vectors and matrices</li>
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Proof and mathematical reasoning</li>
+            </ul>
+          </div>
+
+          <div class="module-card bg-white rounded-sm shadow-sm overflow-hidden p-6">
+            <span class="block text-[0.58rem] font-extrabold tracking-[0.2em] uppercase text-brand mb-2">Module 3</span>
+            <h3 class="text-[1rem] font-bold text-ink mb-4" style="font-family:'Playfair Display',Georgia,serif;">Physics</h3>
+            <ul class="space-y-1.5 text-[14px] text-ink-mid">
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Mechanics and dynamics</li>
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Waves and optics</li>
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Electricity and magnetism</li>
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Fields and particle physics</li>
+              <li class="flex items-start gap-2"><span class="mt-[0.42em] block w-3.5 h-[1.5px] bg-brand flex-shrink-0"></span>Thermal and modern physics</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="mt-8 text-[14px] text-ink-muted leading-relaxed border-t border-rule pt-6">
+          Each ESAT module is taught in full, with emphasis on technique, accuracy under time pressure, and recognising the question patterns the test consistently rewards. 1-to-1 tuition is also available at &pound;70/hour &mdash; contact <a href="https://physicsandmathscourses.com" class="text-brand hover:text-brand-dk transition-colors" target="_blank" rel="noopener noreferrer">physicsandmathscourses.com</a>.
+        </p>
       </div>
     </section>
 
-    <!-- ── Testimonials ─────────────────────────────────────── -->
-    <section class="testimonials" aria-labelledby="testimonials-heading">
-      <div class="container">
-        <span class="section-label">Student outcomes</span>
-        <h2 id="testimonials-heading">What students and parents say</h2>
-        <div class="testi-grid">
-          <blockquote class="testi">
-            <p class="testi__quote">&ldquo;Just to let you know &mdash; he got an offer from Oxford for Engineering.&rdquo;</p>
-            <p class="testi__attr">Parent &mdash; 2025</p>
+    <!-- Testimonials -->
+    <section class="bg-white py-20 border-t border-rule">
+      <div class="max-w-[680px] mx-auto px-6">
+        <span class="block text-[0.62rem] font-extrabold tracking-[0.22em] uppercase text-brand mb-3">Student outcomes</span>
+        <h2 class="text-[clamp(1.5rem,3.5vw,1.9rem)] font-bold tracking-tight leading-tight mb-8 text-ink">What students and parents say</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <blockquote class="bg-wash border-l-[3px] border-brand p-6 m-0">
+            <p class="text-base text-ink-mid italic leading-relaxed mb-3">&ldquo;Just to let you know &mdash; he got an offer from Oxford for Engineering.&rdquo;</p>
+            <p class="text-[0.78rem] font-bold tracking-wide text-ink-muted">Parent &mdash; 2025</p>
           </blockquote>
-          <blockquote class="testi">
-            <p class="testi__quote">&ldquo;She received a conditional offer to read Engineering at New College, Oxford.&rdquo;</p>
-            <p class="testi__attr">Parent &mdash; 2024</p>
+          <blockquote class="bg-wash border-l-[3px] border-brand p-6 m-0">
+            <p class="text-base text-ink-mid italic leading-relaxed mb-3">&ldquo;She received a conditional offer to read Engineering at New College, Oxford.&rdquo;</p>
+            <p class="text-[0.78rem] font-bold tracking-wide text-ink-muted">Parent &mdash; 2024</p>
           </blockquote>
         </div>
+        <p class="mt-6 text-center text-[0.9rem] text-ink-muted">
+          Read more reviews on <a href="https://uk.trustpilot.com/review/physicsandmathscourses.com" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dk transition-colors">Trustpilot</a>
+        </p>
       </div>
     </section>
 
-    <!-- ── PAT legacy note ───────────────────────────────── -->
-    <section class="pat-note" aria-labelledby="pat-heading">
-      <div class="container">
-        <span class="section-label">For returning visitors</span>
-        <h2 id="pat-heading">Previously the Oxford PAT</h2>
-        <div class="pat-note-inner">
-          <p>Students and parents searching for an oxford pat online course or esat course online will find this programme directly relevant. The Oxford Physics Aptitude Test (PAT) was an Oxford University admissions test and the inspiration for this site&rsquo;s domain name, which retains search value for those familiar with the legacy name. Oxford, Cambridge, and Imperial College now use the ESAT for applicants to Physics, Physics &amp; Philosophy, and Engineering. Our preparation programme has been fully updated for the current ESAT format and syllabus. Oxford University&rsquo;s own preparation course &mdash; formerly known as &ldquo;Preparing for Oxford PAT&rdquo; &mdash; is now called &ldquo;Preparing for Oxford Physics&rdquo;.</p>
+    <!-- PAT legacy note -->
+    <section class="bg-wash py-16 border-t border-rule">
+      <div class="max-w-[680px] mx-auto px-6">
+        <span class="block text-[0.62rem] font-extrabold tracking-[0.22em] uppercase text-brand mb-3">For returning visitors</span>
+        <h2 class="text-[clamp(1.4rem,3vw,1.7rem)] font-bold tracking-tight leading-tight mb-5 text-ink">Previously the Oxford PAT</h2>
+        <p class="text-[18px] text-ink-mid leading-[1.7] pl-5 border-l-[3px] border-rule">
+          Students and parents searching for an oxford pat online course or esat course online will find this programme directly relevant. The Oxford Physics Aptitude Test (PAT) was an Oxford University admissions test and the inspiration for this site&rsquo;s domain name, which retains search value for those familiar with the legacy name. Oxford, Cambridge, and Imperial College now use the ESAT for applicants to Physics, Physics &amp; Philosophy, and Engineering. Our preparation programme has been fully updated for the current ESAT format and syllabus. Oxford University&rsquo;s own preparation course &mdash; formerly known as &ldquo;Preparing for Oxford PAT&rdquo; &mdash; is now called &ldquo;Preparing for Oxford Physics&rdquo;.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white py-20 border-t border-rule">
+      <div class="max-w-[680px] mx-auto px-6">
+        <span class="block text-[0.62rem] font-extrabold tracking-[0.22em] uppercase text-brand mb-3">Frequently asked questions</span>
+        <h2 class="text-[clamp(1.5rem,3.5vw,1.9rem)] font-bold tracking-tight leading-tight mb-9 text-ink">ESAT Preparation &mdash; Common Questions</h2>
+        <div class="divide-y divide-rule border-t border-rule">
+
+          <div class="faq-item py-5">
+            <button class="faq-toggle w-full flex items-start justify-between gap-4 text-left bg-transparent border-0 p-0 cursor-pointer">
+              <h3 class="text-[1rem] font-bold text-ink leading-snug">What is the ESAT?</h3>
+              <span class="faq-icon text-brand text-xl font-light leading-none mt-0.5 flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer pt-3 pr-8">
+              <p class="text-[18px] text-ink-mid leading-[1.7] max-w-[620px]">The Engineering and Science Admissions Test (ESAT) is a written admissions test required for applications to Physics, Physics &amp; Philosophy, and Engineering courses at Oxford University, Cambridge University, and Imperial College London. It consists of multiple-choice questions across three modules: Mathematics&nbsp;1, Mathematics&nbsp;2, and Physics. Each module is 40 minutes and there is no negative marking. The test is taken in October of Year&nbsp;13 and carries significant weight in the admissions decision.</p>
+            </div>
+          </div>
+
+          <div class="faq-item py-5">
+            <button class="faq-toggle w-full flex items-start justify-between gap-4 text-left bg-transparent border-0 p-0 cursor-pointer">
+              <h3 class="text-[1rem] font-bold text-ink leading-snug">Which courses require the ESAT?</h3>
+              <span class="faq-icon text-brand text-xl font-light leading-none mt-0.5 flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer pt-3 pr-8">
+              <p class="text-[18px] text-ink-mid leading-[1.7] max-w-[620px]">The ESAT is required for Cambridge University applications to Physics, Physics &amp; Philosophy, and all Engineering courses (including Chemical Engineering). Applicants to these courses must sit Mathematics&nbsp;1, Mathematics&nbsp;2, and Physics modules.</p>
+            </div>
+          </div>
+
+          <div class="faq-item py-5">
+            <button class="faq-toggle w-full flex items-start justify-between gap-4 text-left bg-transparent border-0 p-0 cursor-pointer">
+              <h3 class="text-[1rem] font-bold text-ink leading-snug">What does the ESAT preparation course cover?</h3>
+              <span class="faq-icon text-brand text-xl font-light leading-none mt-0.5 flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer pt-3 pr-8">
+              <p class="text-[18px] text-ink-mid leading-[1.7] max-w-[620px]">The course covers all three ESAT modules in full: Mathematics&nbsp;1 (algebra, functions, calculus, sequences and series), Mathematics&nbsp;2 (further calculus, differential equations, complex numbers, vectors), and Physics (mechanics, waves, electricity, fields, thermal physics, modern physics). Each module is 40 minutes of multiple-choice questions. The focus is on problem-solving technique, exam strategy, accuracy under timed conditions, and extensive practice with past-paper style questions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item py-5">
+            <button class="faq-toggle w-full flex items-start justify-between gap-4 text-left bg-transparent border-0 p-0 cursor-pointer">
+              <h3 class="text-[1rem] font-bold text-ink leading-snug">How does online ESAT tuition work?</h3>
+              <span class="faq-icon text-brand text-xl font-light leading-none mt-0.5 flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer pt-3 pr-8">
+              <p class="text-[18px] text-ink-mid leading-[1.7] max-w-[620px]">Sessions are delivered online via Zoom in small groups. Dr&nbsp;Korte works through problems in real time using screen-sharing, with students able to ask questions and discuss approaches throughout. This format combines the rigour of structured classroom teaching with the convenience of online delivery.</p>
+            </div>
+          </div>
+
+          <div class="faq-item py-5">
+            <button class="faq-toggle w-full flex items-start justify-between gap-4 text-left bg-transparent border-0 p-0 cursor-pointer">
+              <h3 class="text-[1rem] font-bold text-ink leading-snug">What makes Dr Korte qualified to teach ESAT preparation?</h3>
+              <span class="faq-icon text-brand text-xl font-light leading-none mt-0.5 flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer pt-3 pr-8">
+              <p class="text-[18px] text-ink-mid leading-[1.7] max-w-[620px]">Dr&nbsp;Korte holds a First Class degree in Physics from the University of Oxford (ranked 2nd in entrance examinations worldwide), an MSc with Distinction in Mathematical Modelling from University College London, and a PhD in Theoretical Physics from Imperial College London. He is a Member of the Institute of Physics (MInstP) and has extensive experience as a PAT tutor and ESAT tutor, helping students secure offers from Oxford and Cambridge.</p>
+            </div>
+          </div>
+
+          <div class="faq-item py-5">
+            <button class="faq-toggle w-full flex items-start justify-between gap-4 text-left bg-transparent border-0 p-0 cursor-pointer">
+              <h3 class="text-[1rem] font-bold text-ink leading-snug">Is this course suitable for Year 12 students as well as Year 13?</h3>
+              <span class="faq-icon text-brand text-xl font-light leading-none mt-0.5 flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer pt-3 pr-8">
+              <p class="text-[18px] text-ink-mid leading-[1.7] max-w-[620px]">Yes. While the ESAT is sat in October of Year&nbsp;13, starting preparation in Year&nbsp;12 allows more time to develop the depth of understanding the test rewards. Year&nbsp;12 students who begin early are often better placed to consolidate their A-level content alongside ESAT-specific technique. Dr&nbsp;Korte can advise on the most suitable timing for individual students.</p>
+            </div>
+          </div>
+
+          <div class="faq-item py-5">
+            <button class="faq-toggle w-full flex items-start justify-between gap-4 text-left bg-transparent border-0 p-0 cursor-pointer">
+              <h3 class="text-[1rem] font-bold text-ink leading-snug">How much does the ESAT preparation course cost?</h3>
+              <span class="faq-icon text-brand text-xl font-light leading-none mt-0.5 flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer pt-3 pr-8">
+              <p class="text-[18px] text-ink-mid leading-[1.7] max-w-[620px]">September 2026 course fees: 2-day Maths &amp; Physics &mdash; &pound;295; 1-day Maths only &mdash; &pound;195; 1-day Physics only &mdash; &pound;195. 1-to-1 tuition is also available at &pound;70 per hour. Full details and booking at physicsandmathscourses.com.</p>
+            </div>
+          </div>
+
+          <div class="faq-item py-5">
+            <button class="faq-toggle w-full flex items-start justify-between gap-4 text-left bg-transparent border-0 p-0 cursor-pointer">
+              <h3 class="text-[1rem] font-bold text-ink leading-snug">When are the September 2026 ESAT courses?</h3>
+              <span class="faq-icon text-brand text-xl font-light leading-none mt-0.5 flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer pt-3 pr-8">
+              <p class="text-[18px] text-ink-mid leading-[1.7] max-w-[620px]">The September 2026 courses run on 19&ndash;20 September 2026. The 2-day course covers both days; the 1-day Maths course runs on 19 September; the 1-day Physics course runs on 20 September. Places are limited &mdash; early booking is recommended.</p>
+            </div>
+          </div>
+
+          <div class="faq-item py-5">
+            <button class="faq-toggle w-full flex items-start justify-between gap-4 text-left bg-transparent border-0 p-0 cursor-pointer">
+              <h3 class="text-[1rem] font-bold text-ink leading-snug">I was looking for Oxford PAT preparation &mdash; is this the right course?</h3>
+              <span class="faq-icon text-brand text-xl font-light leading-none mt-0.5 flex-shrink-0">+</span>
+            </button>
+            <div class="faq-answer pt-3 pr-8">
+              <p class="text-[18px] text-ink-mid leading-[1.7] max-w-[620px]">Yes. This site was originally dedicated to Oxford PAT preparation. The Oxford Physics Aptitude Test (PAT) has been replaced by the ESAT for Oxford, Cambridge, and Imperial College applications. Students searching for an oxford pat online course or esat course online will find this preparation programme directly relevant. The course has been fully updated for the current ESAT syllabus and format.</p>
+            </div>
+          </div>
+
         </div>
-      </div>
-    </section>
-
-    <!-- ── FAQ ──────────────────────────────────────────── -->
-    <section class="faq" aria-labelledby="faq-heading">
-      <div class="container">
-        <span class="section-label">Common Questions</span>
-        <h2 id="faq-heading">Frequently Asked Questions</h2>
-        <dl class="faq-list">
-
-          <div class="faq-item">
-            <dt class="faq-q">What is the ESAT?</dt>
-            <dd class="faq-a">The Engineering and Science Admissions Test (ESAT) is a written admissions test required for applications to Physics, Physics &amp; Philosophy, and Engineering courses at Oxford University, Cambridge University, and Imperial College London. It consists of multiple-choice questions across three modules: Mathematics 1, Mathematics 2, and Physics. Each module is 40 minutes and there is no negative marking. The test is taken in October of Year 13 and carries significant weight in the admissions decision.</dd>
-          </div>
-
-          <div class="faq-item">
-            <dt class="faq-q">Which courses require the ESAT?</dt>
-            <dd class="faq-a">The ESAT is required for Cambridge University applications to Physics, Physics &amp; Philosophy, and all Engineering courses (including Chemical Engineering). Applicants to these courses must sit Mathematics 1, Mathematics 2, and Physics modules.</dd>
-          </div>
-
-          <div class="faq-item">
-            <dt class="faq-q">What does the ESAT preparation course cover?</dt>
-            <dd class="faq-a">The course covers all three ESAT modules in full: Mathematics 1 (algebra, functions, calculus, sequences and series), Mathematics 2 (further calculus, differential equations, complex numbers, vectors), and Physics (mechanics, waves, electricity, fields, thermal physics, modern physics). Each module is 40 minutes of multiple-choice questions. The focus is on problem-solving technique, exam strategy, accuracy under timed conditions, and extensive practice with past-paper style questions.</dd>
-          </div>
-
-          <div class="faq-item">
-            <dt class="faq-q">How does online ESAT tuition work?</dt>
-            <dd class="faq-a">Sessions are delivered online via Zoom in small groups. Dr Korte works through problems in real time using screen-sharing, with students able to ask questions and discuss approaches throughout. This format combines the rigour of structured classroom teaching with the convenience of online delivery.</dd>
-          </div>
-
-          <div class="faq-item">
-            <dt class="faq-q">What makes Dr Korte qualified to teach ESAT preparation?</dt>
-            <dd class="faq-a">Dr Korte holds a First Class degree in Physics from the University of Oxford (ranked 2nd in entrance examinations worldwide), an MSc with Distinction in Mathematical Modelling from University College London, and a PhD in Theoretical Physics from Imperial College London. He is a Member of the Institute of Physics (MInstP) and has extensive experience as a PAT tutor and ESAT tutor, helping students secure offers from Oxford and Cambridge.</dd>
-          </div>
-
-          <div class="faq-item">
-            <dt class="faq-q">Is this course suitable for Year 12 students as well as Year 13?</dt>
-            <dd class="faq-a">Yes. While the ESAT is sat in October of Year 13, starting preparation in Year 12 allows more time to develop the depth of understanding the test rewards. Year 12 students who begin early are often better placed to consolidate their A-level content alongside ESAT-specific technique. Dr Korte can advise on the most suitable timing for individual students.</dd>
-          </div>
-
-          <div class="faq-item">
-            <dt class="faq-q">How much does the ESAT preparation course cost?</dt>
-            <dd class="faq-a">September 2026 course fees: 2-day Maths &amp; Physics &mdash; &pound;295; 1-day Maths only &mdash; &pound;195; 1-day Physics only &mdash; &pound;195. 1-to-1 tuition is also available at &pound;70 per hour. Full details and booking at physicsandmathscourses.com.</dd>
-          </div>
-
-          <div class="faq-item">
-            <dt class="faq-q">When are the September 2026 ESAT courses?</dt>
-            <dd class="faq-a">The September 2026 courses run on 19&ndash;20 September 2026. The 2-day course covers both days; the 1-day Maths course runs on 19 September; the 1-day Physics course runs on 20 September. Places are limited &mdash; early booking is recommended.</dd>
-          </div>
-
-          <div class="faq-item">
-            <dt class="faq-q">I was looking for Oxford PAT preparation &mdash; is this the right course?</dt>
-            <dd class="faq-a">Yes. This site was originally dedicated to Oxford PAT preparation. The Oxford Physics Aptitude Test (PAT) has been replaced by the ESAT for Oxford, Cambridge, and Imperial College applications. Students searching for an oxford pat online course or esat course online will find this preparation programme directly relevant. The course has been fully updated for the current ESAT syllabus and format.</dd>
-          </div>
-
-        </dl>
       </div>
     </section>
 
   </main>
 
-  <!-- ── Footer ──────────────────────────────────────────── -->
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div>
-          <p class="footer-cta-label">Full details and booking</p>
-          <p class="footer-cta-text">Find out more and reserve your place at physicsandmathscourses.com</p>
-          <a class="btn" href="https://physicsandmathscourses.com/book-a-course/oxford-pat-course.html" target="_blank" rel="noopener noreferrer">Go to physicsandmathscourses.com</a>
-        </div>
-        <div class="footer-rule"></div>
-        <div class="footer-links">
-          <a href="https://physicscourses.co.uk" target="_blank" rel="noopener noreferrer">A-level Physics courses</a>
-          <a href="https://alevelmathsonline.co.uk" target="_blank" rel="noopener noreferrer">A-level Maths courses</a>
-        </div>
-        <div class="footer-meta">
-          <span>&copy; 2026 physicsandmathscourses.com</span>
-          <span>ESAT preparation &mdash; Cambridge Physics, Physics &amp; Philosophy, Engineering</span>
-          <a href="https://physicsandmathscourses.com/our-services/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-        </div>
+  <!-- Secondary CTA -->
+  <div class="cta-band-bg py-14">
+    <div class="max-w-[980px] mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 flex-wrap">
+      <p class="text-[18px] text-white/75 leading-relaxed">
+        <strong class="block text-white font-extrabold text-[18px] mb-1">Ready to book a place?</strong>
+        Full details, course dates and pricing at the main site.
+      </p>
+      <a href="https://physicsandmathscourses.com/book-a-course/oxford-pat-course.html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-block bg-transparent text-white border-2 border-white/65 text-[0.78rem] font-extrabold tracking-[0.07em] uppercase px-7 py-3 rounded-sm hover:border-white hover:bg-white/10 transition-colors whitespace-nowrap">
+        See dates, prices &amp; booking &rarr;
+      </a>
+    </div>
+  </div>
+
+  <footer class="bg-ink border-t border-white/[0.06] py-5">
+    <div class="max-w-[980px] mx-auto px-6">
+      <div class="flex flex-wrap items-center justify-between gap-2 text-[0.875rem] text-white/30">
+        <span>&copy; 2026 OxfordPAT.co.uk &mdash; <a href="https://physicsandmathscourses.com" target="_blank" rel="noopener noreferrer" class="text-white/50 hover:text-white/85 transition-colors">physicsandmathscourses.com</a></span>
+        <a href="https://physicsandmathscourses.com/our-services/privacy-policy.html" target="_blank" rel="noopener noreferrer" class="text-white/50 hover:text-white/85 transition-colors text-[0.875rem]">Privacy Policy</a>
+      </div>
+      <div class="text-[0.8rem] text-white/30 pt-2.5 border-t border-white/[0.06] mt-2.5">
+        A-level Physics courses: <a href="https://physicscourses.co.uk" target="_blank" rel="noopener noreferrer" class="text-white/40 hover:text-white/75 transition-colors">physicscourses.co.uk</a>
+        &nbsp;&middot;&nbsp;
+        A-level Maths courses: <a href="https://alevelmathsonline.co.uk" target="_blank" rel="noopener noreferrer" class="text-white/40 hover:text-white/75 transition-colors">alevelmathsonline.co.uk</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.faq-item').classList.toggle('open');
+      });
+    });
+  </script>
 
 </body>
 </html>
